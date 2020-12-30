@@ -17,8 +17,10 @@
 const Route = use("Route");
 
 Route.on("/").render("home");
-Route.get("/test", () => "Hello World!");
-Route.get("/test/:id", function ({ params }) {
-  return `this is the id: ${params.id}`;
-});
-Route.get("/task", "TaskController.index");
+Route.on("/tasks").render("tasks");
+Route.on("/add").render("add");
+// Route.get("/test", () => "Hello World!");
+// Route.get("/test/:id", function ({ params }) {
+//   return `this is the id: ${params.id}`;
+// });
+// Route.get("/task", "TaskController.index");
