@@ -1,12 +1,14 @@
 @layout('main')
 @section('content')
-<h1>Tasks</h1>
+<h1>{{ title }}</h1>
+@if(old('notification'))
 <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
+    {{ old('notification')}}
   </div>
+@endif
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+    @each(item in tasks)
+        <a href="#" class="list-group-item list-group-item-action">{{ item.title }}</a>
+    @endeach
   </div>
 @endsection
