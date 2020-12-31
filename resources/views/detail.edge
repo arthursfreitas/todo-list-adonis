@@ -1,0 +1,13 @@
+@layout('main')
+@section('content')
+<div class="card">
+    <div class="card-body">
+    <h1>{{task.title}}</h1>
+    <p class="lead">
+        {{task.body}}
+    </p>
+    <hr class="my-4">
+    <a href="/tasks" class="btn btn-primary btn-lg">Go Back</a>
+    </div>
+</div>
+@endsection

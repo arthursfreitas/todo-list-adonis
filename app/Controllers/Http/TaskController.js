@@ -46,6 +46,18 @@ class TaskController {
 
     return response.redirect("/tasks");
   }
+
+  async detail({ params, view }) {
+    const task = await Task.find(params.id);
+
+    return view.render("detail", {
+      task,
+    });
+  }
+
+  async destroy({ params, response, session }){
+    
+  }
 }
 
 module.exports = TaskController;
