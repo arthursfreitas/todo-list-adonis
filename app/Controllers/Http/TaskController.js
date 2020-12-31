@@ -55,8 +55,12 @@ class TaskController {
     });
   }
 
-  async destroy({ params, response, session }){
-    
+  async destroy({ params, response, session }) {
+    const task = await Task.find(params.id);
+    await task.delete();
+    session.flash({ notification: "Task removed" });
+
+    return response.redirect("/tasks");
   }
 }
 
